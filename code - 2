@@ -1,0 +1,24 @@
+# Welcome message
+print("Welcome to the college student registration chatbot for boot camps!")
+
+# Ask for student's name
+name = input("What is your name? ")
+
+# Ask for student's age
+age = input("What is your age? ")
+
+# Ask for student's school
+school = input("What college do you attend? ")
+
+# Ask for student's major
+major = input("What is your major? ")
+
+# Ask for student's year in college
+year = input("What year are you in college? ")
+
+# Confirm details and print them
+print(f"\nThank you {name}! Here are your registration details for the boot camp:")
+print(f"Age: {age}")
+print(f"College: {school}")
+print(f"Major: {major}")
+print(f"Year in college: {year}")
