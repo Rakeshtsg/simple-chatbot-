@@ -1,0 +1,34 @@
+# Import necessary libraries
+from flask import Flask, request
+from twilio.twiml.messaging_response import MessagingResponse
+
+# Create Flask app
+app = Flask(__name__)
+
+@app.route("/")
+def register_bootcamp():
+    # Get message sent by user
+    message = request.form['Body']
+    
+    # Initialize response
+    response = MessagingResponse()
+    
+    # Parse message to get student's details
+    details = message.split("\n")
+    name = details[0]
+    age = details[1]
+    school = details[2]
+    major = details[3]
+    year = details[4]
+    
+    # Confirm details and print them
+    response.message(f"Thank you {name}! Here are your registration details for the boot camp:\n"
+                     f"Age: {age}\n"
+                     f"College: {school}\n"
+                     f"Major: {major}\n"
+                     f"Year in college: {year}")
+                     
+    return str(response)
+                     
+if __name__ == "__main__":
+    app.run()
